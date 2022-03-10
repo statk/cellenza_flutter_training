@@ -8,9 +8,9 @@ import '../states/books_state.dart';
 
 class BookCubit extends Cubit<BaseState> {
 
-  final AbstractBooksService _booksService = BooksService();
+  final AbstractBooksService _booksService;
 
-  BookCubit() : super(InitialState());
+  BookCubit(this._booksService) : super(InitialState());
 
   Future getBooks() async{
     emit(PendingState());
